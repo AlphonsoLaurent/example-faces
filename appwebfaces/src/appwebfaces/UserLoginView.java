@@ -1,6 +1,9 @@
 package appwebfaces;
+import java.io.IOException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
  
@@ -28,7 +31,7 @@ public class UserLoginView {
         this.password = password;
     }
    
-    public void login(ActionEvent event) {
+    public void login(ActionEvent event) throws IOException {
         RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage message = null;
         boolean loggedIn = false;
@@ -43,5 +46,9 @@ public class UserLoginView {
          
         FacesContext.getCurrentInstance().addMessage(null, message);
         context.addCallbackParam("loggedIn", loggedIn);
+        
+        
+//        ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+//        ec.redirect(ec.getRequestContextPath() + "/newpage.xhtml");
     }   
 }
