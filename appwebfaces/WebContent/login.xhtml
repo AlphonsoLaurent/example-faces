@@ -23,7 +23,7 @@
             <h:outputLabel for="password" value="Password:" />
             <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
             <f:facet name="footer">
-                <p:commandButton value="Login" update="growl" actionListener="#{userLoginView.validateUsernamePassword}"
+                <p:commandButton value="Login" update="growl" actionListener="#{userLoginView.logueo}"
                                    />
 <!--                                   oncomplete="handleLoginRequest(xhr, status, args)" -->
             </f:facet>  
