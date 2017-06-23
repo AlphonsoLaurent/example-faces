@@ -10,8 +10,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import util.SessionUtils;
-
-@ManagedBean
+@ManagedBean(name="userLoginView")
 public class UserLoginView implements Serializable {
 
 	private static final long serialVersionUID = 1094801825228386363L;
@@ -19,31 +18,7 @@ public class UserLoginView implements Serializable {
 	private String password;
 	private String msg;
 	private String username;
-
-	// public void login(ActionEvent event) throws IOException {
-	// RequestContext context = RequestContext.getCurrentInstance();
-	// FacesMessage message = null;
-	// boolean loggedIn = false;
-	//
-	// if(username != null && username.equals("admin") && password != null &&
-	// password.equals("admin")) {
-	// loggedIn = true;
-	// message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome",
-	// username);
-	//
-	//
-	//
-	// } else {
-	// loggedIn = false;
-	// message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error",
-	// "Invalid credentials");
-	// }
-	//
-	// FacesContext.getCurrentInstance().addMessage(null, message);
-	// context.addCallbackParam("loggedIn", loggedIn);
-	//
-	// }
-
+ 
 	public String getPassword() {
 		return password;
 	}

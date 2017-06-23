@@ -1,4 +1,4 @@
-package appwebfaces;
+package model;
 
 public class Car {
 	private String randomId;

@@ -1,12 +1,18 @@
-package appwebfaces;
+package services;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-public class CarService {
-	 private final static String[] colors;
+import model.Car;
+
+public class CarService  implements Serializable{
+ 
+	private static final long serialVersionUID = -7888881576630161596L;
+
+	private final static String[] colors;
      
 	    private final static String[] brands;
 	     

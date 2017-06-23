@@ -1,14 +1,21 @@
 package appwebfaces;
 import java.io.Serializable;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped; 
-@ManagedBean(name="dtBasicView")
+import javax.faces.bean.ViewScoped;
+
+import model.Car;
+import services.CarService; 
+@ManagedBean(name="basicView")
 @ViewScoped
-public class BasicView {
-	 private List<Car> cars;
+public class BasicView implements Serializable{
+ 
+	private static final long serialVersionUID = 2770479400260623063L;
+
+	private List<Car> cars;
      
 	    @ManagedProperty("#{carService}")
 	    private CarService service;
