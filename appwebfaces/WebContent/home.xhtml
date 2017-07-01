@@ -7,11 +7,34 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Facelet Title</title>
+<title>Facelet Title</title>
 <script name="jquery/jquery.js" library="primefaces"></script>
 </h:head>
- <h:body>
-<h1>hola mundo</h1>
-<h:outputText value="#{userLoginView.username}"/> 
+<h:body>
+<h1>hola mundo ==== <h:outputText value="#{basicView.usuarioLogueado}"/> ==== </h1>
+
+        <h:form styleClass="jsfcrud_list_form">
+            <p:dataTable value="#{basicView.cars}" var="car" border="1" cellpadding="2" cellspacing="5" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px;"
+                 paginator="true" rows="10">
+            	<p:column headerText="ID">
+                    <h:outputText value="#{car.randomId}"/>
+                </p:column>
+                <p:column headerText="NOMBRE DEL AUTO">
+                    <h:outputText value="#{car.randomBrand}"/>
+                </p:column>
+                <p:column headerText="AÑO">
+                    <h:outputText value="#{car.randomYear}"/>
+                </p:column>
+                <p:column headerText="COLOR">
+                    <h:outputText value="#{car.randomColor}"/>
+                </p:column>
+                <p:column headerText="PRECIO">
+                    <h:outputText value="#{car.randomPrice}"/>
+                </p:column>
+                 <p:column headerText="ESTATUS">
+                    <h:outputText value="#{car.randomSoldState}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
 </h:body>
 </html>

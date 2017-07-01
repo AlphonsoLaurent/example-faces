@@ -6,10 +6,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import model.Car;
 
+@Stateless
 public class CarService  implements Serializable{
- 
+	@PersistenceContext(unitName = "portal")
+    private EntityManager em;
 	private static final long serialVersionUID = -7888881576630161596L;
 
 	private final static String[] colors;
@@ -43,6 +49,7 @@ public class CarService  implements Serializable{
 	    }
 	     
 	    public List<Car> createCars(int size) {
+	    	
 	        List<Car> list = new ArrayList<Car>();
 	        for(int i = 0 ; i < size ; i++) {
 	            list.add(new Car(getRandomId(), getRandomBrand(), getRandomYear(), getRandomColor(), getRandomPrice(), getRandomSoldState()));

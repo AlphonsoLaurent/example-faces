@@ -6,12 +6,5 @@
     version="2.2">
     
     
-    <navigation-rule>
-		<from-view-id>/login.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>succes</from-outcome>
-			<to-view-id>/home.xhtml</to-view-id>
-			<redirect/>
-		</navigation-case>
-	</navigation-rule>
+    
 </faces-config>
